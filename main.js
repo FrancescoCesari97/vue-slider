@@ -33,6 +33,10 @@ const app = createApp({
         this.activeImg--;
       }
     },
+
+    clickThumb(imageindex) {
+      this.activeImg = imageindex;
+    },
   },
 });
 

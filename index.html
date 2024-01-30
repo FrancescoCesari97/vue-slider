@@ -25,7 +25,7 @@
     <div id="root">
         <div class="wrapper bordered ">
 
-            <div class="caroulsel-container  shadow-lg">
+            <div class="caroulsel-container  shadow-lg" @mouseover="">
     
     
     
@@ -39,7 +39,7 @@
     
                 <div class="thumbs rounded-4-bottom">
                     
-                    <div  v-for="(image, index) in images" class="thumb" :class="index == activeImg ? 'active': ''">
+                    <div  v-for="(image, index) in images"  :class="index == activeImg ? 'active': '' "class="thumb" @click="clickThumb(index)">
                         <img :src="image" alt="Svezia" />
                     </div>
                     

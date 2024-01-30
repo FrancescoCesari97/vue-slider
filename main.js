@@ -14,9 +14,12 @@ const app = createApp({
       ],
 
       activeImg: 0,
+
+      autoplay: false,
     };
   },
 
+  //* RACCHIUDE TUTTE LE FUNZIONI CHE SI POSSONO UTILIZZARE
   methods: {
     nextArrow() {
       if (this.activeImg >= this.images.length - 1) {
@@ -37,6 +40,22 @@ const app = createApp({
     clickThumb(imageindex) {
       this.activeImg = imageindex;
     },
+
+    autoslide() {
+      this.autoplay = setInterval(() => {
+        this.nextArrow();
+      }, 2500);
+    },
+    stopAutoSlide() {
+      clearInterval(this.autoplay);
+    },
+  },
+
+  //* INCOMINCIA A FUNZIONARE DOPO CHE LA PAGINA SI è CARICATA
+  mounted() {
+    this.autoplay = setInterval(() => {
+      this.nextArrow();
+    }, 2500);
   },
 });
 

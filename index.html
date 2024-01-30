@@ -9,7 +9,7 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
     <!-- link JavaScript -->
-    <script type="text/JavaScript" src="snak 1.js" defer></script>
+    <script type="text/JavaScript" src="main.js" defer></script>
    
     <!-- Link font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -31,32 +31,18 @@
     
                 <div class="slides-container " id="slides-container">
                     
-                    <img src="./img/01.webp" class="slide active" alt="slide 01"/>
-                    <img src="./img/02.webp" class="slide" alt="slide 02"/>
-                    <img src="./img/03.webp" class="slide" alt="slide 03"/>
-                    <img src="./img/04.webp" class="slide" alt="slide 04"/>
-                    <img src="./img/05.webp" class="slide" alt="slide 05"/>
+                    <img v-bind:src="images[ActiveImg]" class="slide active " alt="slide "/>
+                    
     
                 </div>
     
     
-                <div class="thumbs">
+                <div class="thumbs rounded-4-bottom">
                     
-                    <div class="thumb active">
-                        <img src="img/01.webp" alt="Svezia" />
+                    <div  v-for="(image, index) in images" class="thumb" :class="index == ActiveImg ? 'active': ''">
+                        <img :src="image" alt="Svezia" />
                     </div>
-                    <div class="thumb">
-                        <img src="img/02.webp" alt="Ratchet & Clank" />
-                    </div>
-                    <div class="thumb">
-                        <img src="img/03.webp" alt="Fortnite" />
-                    </div>
-                    <div class="thumb">
-                        <img src="img/04.webp" alt="Stray" />
-                    </div>
-                    <div class="thumb">
-                        <img src="img/05.webp" alt="Avengers" />
-                    </div>
+                    
                 </div>
     
                 

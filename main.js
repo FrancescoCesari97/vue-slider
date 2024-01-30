@@ -13,8 +13,26 @@ const app = createApp({
         "./img/05.webp",
       ],
 
-      ActiveImg: 0,
+      activeImg: 0,
     };
+  },
+
+  methods: {
+    nextArrow() {
+      if (this.activeImg >= this.images.length - 1) {
+        this.activeImg = 0;
+      } else {
+        this.activeImg++;
+      }
+    },
+
+    prevArrow() {
+      if (this.activeImg == 0) {
+        this.activeImg = this.images.length - 1;
+      } else {
+        this.activeImg--;
+      }
+    },
   },
 });
 

@@ -31,7 +31,7 @@
     
                 <div class="slides-container " id="slides-container">
                     
-                    <img v-bind:src="images[ActiveImg]" class="slide active " alt="slide "/>
+                    <img v-bind:src="images[activeImg]" class="slide active " alt="slide "/>
                     
     
                 </div>
@@ -39,7 +39,7 @@
     
                 <div class="thumbs rounded-4-bottom">
                     
-                    <div  v-for="(image, index) in images" class="thumb" :class="index == ActiveImg ? 'active': ''">
+                    <div  v-for="(image, index) in images" class="thumb" :class="index == activeImg ? 'active': ''">
                         <img :src="image" alt="Svezia" />
                     </div>
                     
@@ -47,7 +47,7 @@
     
                 
                 <!-- freccia prev -->
-                <div class="arrow-prev bordered">
+                <div class="arrow-prev bordered" @click="prevArrow()">
                     <i class="fa-solid fa-arrow-left"></i>
                     
     
@@ -55,7 +55,7 @@
     
     
                 <!-- freccia next  -->
-                <div class="arrow-next bordered">
+                <div class="arrow-next bordered"  @click="nextArrow()">
                     <i class="fa-solid fa-arrow-right"></i>
                 
     
